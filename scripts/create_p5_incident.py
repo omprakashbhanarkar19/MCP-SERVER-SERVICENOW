@@ -1,8 +1,8 @@
 """
-Create a P10 incident for user 'qwertyuiop' with short description 'pernal task'.
+Create a P5 incident for user 'qwertyuiop' with short description 'Omprakash_task_created by persnal'.
 
 Usage:
-  python scripts/create_p10_incident.py
+    python scripts/create_p5_incident.py
 
 Requires environment variables in .env: SN_INSTANCE, SN_USERNAME, SN_PASSWORD, SN_API_VERSION (optional)
 """
@@ -11,6 +11,10 @@ import os
 import sys
 import httpx
 from dotenv import load_dotenv
+try:
+    from servicenow import create_record
+except Exception:
+    create_record = None
 
 load_dotenv()
 
@@ -42,7 +46,6 @@ def get_user_sys_id(user_name: str):
     res = _sn_request("GET", "/table/sys_user", params=params)
     if isinstance(res, list) and len(res) > 0:
         return res[0].get("sys_id")
-    # sometimes ServiceNow returns a single dict for table get; handle that
     if isinstance(res, dict) and res.get("sys_id"):
         return res.get("sys_id")
     return None
@@ -55,12 +58,14 @@ def create_incident(caller_sys_id: str, short_description: str, urgency: str = "
         "urgency": urgency,
         "impact": impact
     }
+    if create_record:
+        return create_record("incident", payload)
     return _sn_request("POST", "/table/incident", json=payload)
 
 
 if __name__ == "__main__":
     target_user = "qwertyuiop"
-    short_desc = "pernal task"
+    short_desc = "Omprakash_task_created by persnal"
 
     print(f"Looking up user '{target_user}'...")
     user_sys_id = get_user_sys_id(target_user)
@@ -68,7 +73,7 @@ if __name__ == "__main__":
         print(f"User '{target_user}' not found. Exiting.")
         sys.exit(1)
 
-    print(f"Creating P10 incident for user '{target_user}' ({user_sys_id})...")
+    print(f"Creating P5 incident for user '{target_user}' ({user_sys_id})...")
     incident = create_incident(user_sys_id, short_desc, urgency="4", impact="4")
     print("Incident created:")
     print(incident)

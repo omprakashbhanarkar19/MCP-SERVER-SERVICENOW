@@ -59,7 +59,7 @@ pip install -e .
 4. Install dependencies:
    ```bash
    pip install -e .
-   ```
+  ```
 
 5. Running the Server:
      ```bash

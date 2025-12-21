@@ -38,9 +38,16 @@ This repository contains a ServiceNow integration server for the Model Context P
    ```bash
    git clone https://github.com/your-org/mcp-server-now.git
    cd mcp-server-now
+  
+2. Create a virtual environment and install the package:
+
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate.bat
+pip install -e .
+
    ```
 
-2. Create a `.env` file with your credentials:
+3. Create a `.env` file with your credentials:
 
    ```
    SERVICENOW_INSTANCE=https://your-instance.service-now.com
@@ -49,10 +56,16 @@ This repository contains a ServiceNow integration server for the Model Context P
    GEMINI_API_KEY=your_api_key  # Optional
    ```
 
-3. Install dependencies:
+4. Install dependencies:
    ```bash
    pip install -e .
    ```
+
+5. Running the Server:
+     ```bash
+   mcp install <file_name>.py # servicenow-mcp.py
+   ```
+
 
 ## 🚀 Getting Started
 

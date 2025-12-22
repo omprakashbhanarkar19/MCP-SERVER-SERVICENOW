@@ -12,7 +12,7 @@ import sys
 import httpx
 from dotenv import load_dotenv
 try:
-    from servicenow import create_record
+    from servicenow_mcp_server import create_record
 except Exception:
     create_record = None
 

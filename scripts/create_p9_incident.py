@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 try:
-    from servicenow import create_incident as create_incident_tool
+    from servicenow_mcp_server import create_incident as create_incident_tool
 except Exception:
     create_incident_tool = None
 

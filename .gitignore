@@ -10,7 +10,8 @@ wheels/
 .venv
 
 # Environment variables
-.env
+#.env
 
 servicenow.py
 servicenow_og.py
+scripts/

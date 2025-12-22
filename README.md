@@ -43,7 +43,7 @@ This repository contains a ServiceNow integration server for the Model Context P
 2. Create a virtual environment and install the package:
   
 ``` bash
-     python -m venv .venv
+python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate.bat
 pip install -e .
   ```
@@ -51,9 +51,9 @@ pip install -e .
 3. Create a `.env` file with your credentials:
 
    ``` bash
-   SERVICENOW_INSTANCE=https://your-instance.service-now.com
-   SERVICENOW_USERNAME=your_username
-   SERVICENOW_PASSWORD=your_password
+   SN_INSTANCE=https://your-instance.service-now.com
+   SN_USERNAME=your_username
+   SN_PASSWORD=your_password
    GEMINI_API_KEY=your_api_key  # Optional
    ```
 

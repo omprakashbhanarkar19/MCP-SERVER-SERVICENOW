@@ -52,5 +52,7 @@ curl http://localhost:3333/ec2/list   # aws ec2 server
 
 curl http://localhost:4444/incident/list # Service Now server
 
-# python agent.py
+# RUN and Check Output
+
+python agent.py
 

@@ -88,8 +88,8 @@ def create_incident(
         "assigned_to": assigned_to,
         "state": state
     }
-    payload = {k: v for k, v in payload.items() if v is not None}
-    return _sn_request("POST", "/table/incident", json=payload)
+   # payload = {k: v for k, v in payload.items() if v is not None}
+   # return _sn_request("POST", "/table/incident", json=payload)
 
 
 @mcp.tool()

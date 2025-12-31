@@ -1,5 +1,0 @@
-requests
-fastapi
-boto3
-mcp
-uvicorn
